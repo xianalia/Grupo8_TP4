@@ -42,7 +42,8 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        jMSalir5 = new javax.swing.JMenu();
+        jMItemSalir = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -118,10 +119,24 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setBackground(new java.awt.Color(153, 153, 255));
-        jMenu5.setText("Salir");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuBar1.add(jMenu5);
+        jMSalir5.setBackground(new java.awt.Color(153, 153, 255));
+        jMSalir5.setText("Salir");
+        jMSalir5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMSalir5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMSalir5ActionPerformed(evt);
+            }
+        });
+
+        jMItemSalir.setText("Salir");
+        jMItemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMItemSalirActionPerformed(evt);
+            }
+        });
+        jMSalir5.add(jMItemSalir);
+
+        jMenuBar1.add(jMSalir5);
 
         setJMenuBar(jMenuBar1);
 
@@ -180,6 +195,14 @@ public class Menu extends javax.swing.JFrame {
         escritorio.moveToFront(cv);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jMSalir5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalir5ActionPerformed
+      
+    }//GEN-LAST:event_jMSalir5ActionPerformed
+
+    private void jMItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMItemSalirActionPerformed
+         System.exit(WIDTH);
+    }//GEN-LAST:event_jMItemSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,11 +240,12 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenuItem jMItemSalir;
+    private javax.swing.JMenu jMSalir5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
