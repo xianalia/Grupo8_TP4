@@ -143,18 +143,25 @@ public class FormularioMateriasVista extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbGuardarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarMateriaActionPerformed
-        int idMateria = Integer.parseInt(jtCodigoMateria.getText());
-        String nombre = jtNombreMateria.getText();
-        int anio = Integer.parseInt(jtAnio.getText());
+        try {
+            int idMateria = Integer.parseInt(jtCodigoMateria.getText());
+            
+            if (jtNombreMateria.getText().isEmpty()||jtAnio.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "No se permiten campos vacíos");
+            }
+            String nombre = jtNombreMateria.getText();
+            int anio = Integer.parseInt(jtAnio.getText());
         
-        Materia materia = new Materia (idMateria, nombre, anio);
+            Materia materia = new Materia (idMateria, nombre, anio);
         
         if (materias.add(materia)){
             JOptionPane.showMessageDialog(this, "La materia se cargó correctamente.");
         }else{
             JOptionPane.showMessageDialog(this, "La materia ya se encuentra en la base de datos.");
         };
-        
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this, "El código y el año de la materia deben ser números enteros. Verifique.");
+        }
     }//GEN-LAST:event_jbGuardarMateriaActionPerformed
 
     private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed

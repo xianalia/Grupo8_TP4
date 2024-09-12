@@ -147,19 +147,25 @@ public class FormularioAlumnoVista extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbNuevoActionPerformed
 
     private void jGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGuardarActionPerformed
-        int legajo = Integer.parseInt(jtLegajo.getText());
-        String apellido = jtApellido.getText();
-        String nombre = jtNombre.getText();
+        try {
+            int legajo = Integer.parseInt(jtLegajo.getText());
+            
+            if (jtApellido.getText().isEmpty()||jtNombre.getText().isEmpty()){
+                 JOptionPane.showMessageDialog(this, "No se permiten campos vacíos.");
+                 return;
+            }    
+            String apellido = jtApellido.getText();
+            String nombre = jtNombre.getText();
         
         Alumno alumno = new Alumno (legajo, apellido, nombre);
-        
         if (alumnos.add(alumno)){
             JOptionPane.showMessageDialog(this, "El alumno se cargó correctamente.");
-        }else {
-            JOptionPane.showMessageDialog(this, "El alumno ya se encuentra en la base de datos.");
+            }else{
+            JOptionPane.showMessageDialog(this, "El número de legajo no admite duplicados.");
         };
-        
-        
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(this, "La matrícula debe ser un número entero.");
+        }  
     }//GEN-LAST:event_jGuardarActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed

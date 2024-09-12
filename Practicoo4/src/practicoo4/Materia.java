@@ -21,9 +21,7 @@ public class Materia {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + this.idMateria;
-        hash = 79 * hash + Objects.hashCode(this.nombre);
-        hash = 79 * hash + this.anio;
+        hash = 13 * hash + this.idMateria;
         return hash;
     }
 
@@ -42,14 +40,9 @@ public class Materia {
         if (this.idMateria != other.idMateria) {
             return false;
         }
-        if (this.anio != other.anio) {
-            return false;
-        }
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
         return true;
     }
+    
     
     
 }
