@@ -157,7 +157,7 @@ public class FormularioMateriasVista extends javax.swing.JInternalFrame {
         if (materias.add(materia)){
             JOptionPane.showMessageDialog(this, "La materia se cargó correctamente.");
         }else{
-            JOptionPane.showMessageDialog(this, "La materia ya se encuentra en la base de datos.");
+            JOptionPane.showMessageDialog(this, "El código debe ser único para cada materia. Verifique por favor");
         };
         } catch (NumberFormatException nfe){
             JOptionPane.showMessageDialog(this, "El código y el año de la materia deben ser números enteros. Verifique.");
